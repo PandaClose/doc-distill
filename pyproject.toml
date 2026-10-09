@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "doc-distill"
+version = "0.1.0"
+description = "Distill any document asset (books, doc sites, GitHub repos, llms.txt, web pages) into manual-style agent skills + RAG corpora. Zero core dependencies, no API key, no Docker."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+keywords = ["agent-skills", "rag", "knowledge-base", "claude", "distillation"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Topic :: Software Development :: Documentation",
+    "Topic :: Text Processing :: Markup :: Markdown",
+]
+
+[project.scripts]
+doc-distill = "doc_distill.cli:main"
+
+[project.optional-dependencies]
+pdf = ["pypdf>=4.0"]
+# 高质量技术书解析（保留表格/代码块结构），见 README「重格式」一节
+pdf-pro = ["docling"]
+rtf = ["striprtf>=0.0.22"]
+# 网页正文提取质量增强（可选；缺省使用内置的零依赖 HTML→Markdown 转换器）
+web = ["trafilatura>=1.8"]
+all = ["pypdf>=4.0", "striprtf>=0.0.22", "trafilatura>=1.8"]
+
+[tool.setuptools.packages.find]
+where = ["src"]

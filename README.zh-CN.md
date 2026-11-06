@@ -2,6 +2,10 @@
 
 [English](README.md) | **简体中文**
 
+[![CI](https://github.com/PandaClose/doc-distill/actions/workflows/ci.yml/badge.svg)](https://github.com/PandaClose/doc-distill/actions/workflows/ci.yml)
+[![Python 3.9+](https://img.shields.io/badge/python-3.9%2B-blue)](https://www.python.org/downloads/)
+[![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+
 **把任何文档资产蒸馏成手册型 Agent Skill + RAG 语料。**
 
 一本书、一套文档站、一个 GitHub 仓库、一个 llms.txt 清单——一条命令变成两层产物：
@@ -28,6 +32,8 @@ doc-distill run 我的书.epub -o out/
 ```
 
 源 × 蒸馏 × 导出互不耦合，增量并入（fold-in）只对 IR 做合并。
+
+![doc-distill 架构图：提取 → 统一 IR → 蒸馏 → 导出](docs/architecture.png)
 
 ## 支持的输入
 

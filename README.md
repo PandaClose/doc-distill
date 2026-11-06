@@ -2,6 +2,10 @@
 
 **English** | [简体中文](README.zh-CN.md)
 
+[![CI](https://github.com/PandaClose/doc-distill/actions/workflows/ci.yml/badge.svg)](https://github.com/PandaClose/doc-distill/actions/workflows/ci.yml)
+[![Python 3.9+](https://img.shields.io/badge/python-3.9%2B-blue)](https://www.python.org/downloads/)
+[![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+
 **Distill any document asset into a manual-style Agent Skill + RAG corpus.**
 
 One book, a documentation site, a GitHub repo, or an llms.txt manifest — a single command turns it into two layers of output:
@@ -30,6 +34,8 @@ input (book/site/repo/…) → extractors (plugins) → IR (chunks+outline+meta)
 ```
 
 Sources × distillation × export are fully decoupled; incremental fold-in merges at the IR level only.
+
+![doc-distill architecture: extract → unified IR → distill → export](docs/architecture.png)
 
 ## Supported Inputs
 

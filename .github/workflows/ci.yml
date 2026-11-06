@@ -7,7 +7,8 @@ on:
 
 jobs:
   test:
-    runs-on: ubuntu-latest
+    # ubuntu-latest 已迁至 26.04，actions/setup-python 暂无 3.9 预编译包，锁定 24.04
+    runs-on: ubuntu-24.04
     strategy:
       fail-fast: false
       matrix:
@@ -23,7 +24,7 @@ jobs:
 
   package:
     # 打包冒烟：确认 pip 安装后入口脚本可用
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
